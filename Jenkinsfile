@@ -11,6 +11,7 @@ pipeline {
     }
     stage('upload to nexus'){
       steps{
+        scripts{
         def mavenPom = readMavenPom 'pom.xml'
           nexusArtifactUploader artifacts: [
           [
@@ -25,6 +26,7 @@ pipeline {
          protocol: 'http', 
          repository: 'Devops', 
          version: "${mavenPom.version}"
+        }
       }
     }
   }
