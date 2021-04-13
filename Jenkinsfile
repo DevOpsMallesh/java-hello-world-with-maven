@@ -12,7 +12,7 @@ pipeline {
     stage('upload to nexus'){
       steps{
         script{
-        def mavenPom = readMavenPom 'pom.xml'
+        def mavenPom = readMavenPom file:'pom.xml'
           nexusArtifactUploader artifacts: [
           [
             artifactId: 'hello-world-maven', classifier: '', file: "target/hello-world-maven-${mavenPom.version}.jar", type: 'jar'
