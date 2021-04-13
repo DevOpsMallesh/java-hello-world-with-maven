@@ -4,12 +4,12 @@ pipeline {
     maven 'maven3'
   }
   stages{
-    stage(Build){
+    stage('Build'){
       steps{
         sh script: 'mvn clean package'
       }
     }
-    stage(upload to nexus){
+    stage('upload to nexus'){
       steps{
         nexusArtifactUploader artifacts: [
           [
