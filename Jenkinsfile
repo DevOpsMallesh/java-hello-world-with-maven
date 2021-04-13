@@ -19,7 +19,7 @@ pipeline {
         ], 
          credentialsId: 'nexus3', 
          groupId: 'org.springframework', 
-         nexusUrl: '172.31.65.218:8081',
+         nexusUrl: '3.238.96.180:8081',
          nexusVersion: 'nexus3', 
          protocol: 'http', 
          repository: 'Devops', 
