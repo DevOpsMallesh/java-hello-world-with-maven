@@ -13,7 +13,7 @@ pipeline {
       steps{
         nexusArtifactUploader artifacts: [
           [
-            artifactId: 'jb-hello-world-maven', classifier: '', file: 'target/hello-1.0.jar', type: 'jar'
+            artifactId: 'hello-world-maven', classifier: '', file: 'target/hello-world-maven-1.0.jar', type: 'jar'
           ]
         
         ], 
