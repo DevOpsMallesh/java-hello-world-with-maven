@@ -34,7 +34,7 @@
                     <execution>
                         <phase>package</phase>
                         <goals>
-                            <goal></goal>
+                            <goal>shade</goal>
                         </goals>
                         <configuration>
                             <transformers>
