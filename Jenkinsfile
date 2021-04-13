@@ -11,9 +11,10 @@ pipeline {
     }
     stage('upload to nexus'){
       steps{
+        def mavenVer = readMavenPom 'pom.xml'
         nexusArtifactUploader artifacts: [
           [
-            artifactId: 'hello-world-maven', classifier: '', file: 'target/hello-world-maven-1.0.1.jar', type: 'jar'
+            artifactId: 'hello-world-maven', classifier: '', file: "target/hello-world-maven-${mavenVer.version}.jar", type: 'jar'
           ]
         
         ], 
@@ -23,7 +24,7 @@ pipeline {
          nexusVersion: 'nexus3', 
          protocol: 'http', 
          repository: 'Devops', 
-         version: '1.0.1'
+         version: "${mavenVer.version}"
       }
     }
   }
