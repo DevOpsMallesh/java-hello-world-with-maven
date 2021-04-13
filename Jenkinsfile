@@ -12,12 +12,12 @@ pipeline {
     stage('upload to nexus'){
       steps{
         def mavenPom = readMavenPom 'pom.xml'
-        nexusArtifactUploader artifacts: [
+          nexusArtifactUploader artifacts: [
           [
             artifactId: 'hello-world-maven', classifier: '', file: "target/hello-world-maven-${mavenPom.version}.jar", type: 'jar'
           ]
         
-        ], 
+          ], 
          credentialsId: 'nexus3', 
          groupId: 'org.springframework', 
          nexusUrl: '3.238.96.180:8081',
