@@ -4,6 +4,14 @@ pipeline {
     maven 'maven3'
   }
     stages {
+        stage{
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+                }
+			}
         stage('Hello') {
             steps {
                 echo 'Hello World'
@@ -21,7 +29,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh script: 'mvn3 clean package'
+                sh script: 'mvn clean package'
             }
         }
         stage('Archive Artifact') {
