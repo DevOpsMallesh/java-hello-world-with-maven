@@ -21,7 +21,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh script: 'mvn clean package'
+                sh script: 'mvn3 clean package'
             }
         }
         stage('Archive Artifact') {
