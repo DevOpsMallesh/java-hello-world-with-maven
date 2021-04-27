@@ -3,6 +3,7 @@ pipeline {
     tools {
     maven 'maven3'
   }
+	
     stages {
 	    stage('initialize maven'){
             steps {
@@ -36,7 +37,15 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
-        }       
+        }    
+	    stage('upload to nexus'){
+		    steps{
+			    environment {
+        NEXUS_COMMON_CREDS = credentials('nexus3')
+        NEXUS_URL = 'http://54.242.236.59:8080/'
+				    
+    }
+		    }		    
         
     }
 }
