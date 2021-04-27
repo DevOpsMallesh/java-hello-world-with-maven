@@ -43,8 +43,9 @@ pipeline {
 			    environment {
         NEXUS_COMMON_CREDS = credentials('nexus3')
         NEXUS_URL = 'http://54.242.236.59:8080/'
+			    }
 	nexusArtifactUploader credentialsId: '{$NEXUS_COMMON_CREDS}', groupId: 'devops', nexusUrl: '{$NEXUS_URL}', nexusVersion: 'nexus3', protocol: 'http', repository: 'DevOPS', version: '1.0.0'
-    }
+    
 		    }	
 	    }
         
