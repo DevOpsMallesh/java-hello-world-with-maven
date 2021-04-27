@@ -44,7 +44,7 @@ pipeline {
 	    stage('upload to nexus'){
 		    steps{
 			    
-	nexusArtifactUploader credentialsId: '{$NEXUS_COMMON_CREDS}', groupId: 'devops', nexusUrl: '{$NEXUS_URL}', nexusVersion: 'nexus3', protocol: 'http', repository: 'DevOPS', version: '1.0.0'
+	nexusArtifactUploader artifacts: [[artifactId: 'hello-world', classifier: '', file: 'hello-world-1.0.0.jar', type: 'jar']], credentialsId: '{NEXUS_COMMON_CREDS}', groupId: 'devops', nexusUrl: '{NEXUS_URL}', nexusVersion: 'nexus3', protocol: 'http', repository: 'Devops', version: '1.0.0'
     
 		    }	
 	    }
