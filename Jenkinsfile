@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Git checkout') {
             steps {
-                git branch: 'develop', credentialsId: 'ff8d9146-de5d-43ee-9ff7-adaa9c888197', url: 'https://github.com/DevOpsMallesh/java-hello-world-with-maven.git'
+                git branch: 'testing', credentialsId: 'ff8d9146-de5d-43ee-9ff7-adaa9c888197', url: 'https://github.com/DevOpsMallesh/java-hello-world-with-maven.git'
             }
         }
         stage('build') {
