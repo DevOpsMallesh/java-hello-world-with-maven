@@ -5,7 +5,7 @@ pipeline {
   }
 	environment {
         NEXUS_COMMON_CREDS = credentials('nexus3')
-        NEXUS_URL = 'http://54.242.236.59:8080/'
+        NEXUS_URL = 'http://44.192.22.223:8081/'
 			    }
     stages {
 	    stage('initialize maven'){
