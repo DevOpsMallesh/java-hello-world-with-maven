@@ -4,7 +4,7 @@ pipeline {
     maven 'Maven3'
   }
 	environment {
-        NEXUS_COMMON_CREDS = credentials('nexus3')
+        NEXUS_COMMON_CREDS = credentials('nexus-demo')
         NEXUS_URL = 'http://54.242.236.59:8080/'
 			    }
     stages {
