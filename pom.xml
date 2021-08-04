@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>devops</groupId>
     <artifactId>hello-world-test</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <version>1.0.0</version>
     <name>hello</name>
 
