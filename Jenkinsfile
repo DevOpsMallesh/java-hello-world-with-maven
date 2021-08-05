@@ -15,7 +15,7 @@ pipeline {
         def mavenPom = readMavenPom file:'pom.xml'
           nexusArtifactUploader artifacts: [
           [
-            artifactId: 'hello-world-maven', classifier: '', file: "target/hello-world-test-${mavenPom.version}.jar", type: 'jar'
+            artifactId: 'hello-world-test', classifier: '', file: "target/hello-world-test-${mavenPom.version}.jar", type: 'jar'
           ]
         
           ], 
